@@ -1,0 +1,88 @@
+/* ================================
+   PREVIEW PAGE CONTAINER
+================================ */
+
+.preview-container {
+  min-height: 100vh;
+  padding: 40px 20px;
+
+  /* Match Birthday page theme */
+  background: linear-gradient(
+    120deg,
+    #e8f5f2,   /* light green */
+    #eaf2fb,   /* light blue */
+    #ffffff
+  );
+
+  font-family: 'Poppins', sans-serif;
+  color: #1f2937;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* ================================
+   CONTENT WIDTH CONTROL
+================================ */
+
+.preview-container > * {
+  max-width: 900px;
+  width: 100%;
+}
+
+/* ================================
+   PREVIEW SPACING
+================================ */
+
+.preview-container h1 {
+  margin-bottom: 25px;
+}
+
+.preview-container .gallery,
+.preview-container .collage {
+  margin: 30px auto;
+}
+
+/* ================================
+   GENERATE BUTTON (PREMIUM)
+================================ */
+
+.generate-btn {
+  margin-top: 40px;
+  padding: 14px 36px;
+
+  background: linear-gradient(
+    135deg,
+    #4caf9d,
+    #3b82f6
+  );
+
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  border-radius: 30px;
+
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.generate-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 35px rgba(0,0,0,0.22);
+}
+
+.generate-btn:active {
+  transform: scale(0.97);
+}
+.preview-content {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

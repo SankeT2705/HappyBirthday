@@ -1,0 +1,225 @@
+/* ================================
+   GLOBAL CONTAINER & BACKGROUND
+================================ */
+
+.birthday-container {
+  min-height: 100vh;
+  padding: 30px 20px;
+  position: relative;
+  overflow: hidden;
+
+  /* Light green–blue–white palette */
+  background: linear-gradient(
+    120deg,
+    #e8f5f2,   /* light green */
+    #eaf2fb,   /* light blue */
+    #ffffff
+  );
+
+  font-family: 'Poppins', sans-serif;
+  color: #1f2937;
+}
+
+/* ================================
+   SUBTLE ANIMATED BACKGROUND BLOBS
+================================ */
+
+.background-blobs::before,
+.background-blobs::after {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  z-index: 0;
+  animation: float 16s infinite ease-in-out;
+}
+
+.background-blobs::before {
+  background: radial-gradient(
+    circle,
+    rgba(76, 175, 157, 0.18),
+    transparent 70%
+  );
+  top: 8%;
+  left: -90px;
+}
+
+.background-blobs::after {
+  background: radial-gradient(
+    circle,
+    rgba(59, 130, 246, 0.18),
+    transparent 70%
+  );
+  bottom: 10%;
+  right: -90px;
+  animation-delay: 8s;
+}
+
+@keyframes float {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-35px); }
+  100% { transform: translateY(0); }
+}
+
+/* ================================
+   LOADER
+================================ */
+
+.loader {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+  font-weight: 500;
+  z-index: 1;
+}
+
+/* ================================
+   MAIN CENTER-FOCUSED LAYOUT
+================================ */
+
+.birthday-layout {
+  max-width: 1000px;          /* 👈 central focus */
+  margin: 40px auto 0;
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .birthday-layout {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* ================================
+   MESSAGE SEQUENCE (LEFT)
+================================ */
+
+.message-sequence {
+  width: 380px;               /* 👈 prevents full width stretch */
+}
+
+/* Compact, premium message card */
+.message-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  padding: 10px 14px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  border-left: 4px solid #4caf9d;
+}
+
+.message-card p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.4;
+  color: #1f2937;
+}
+
+.message-card span {
+  display: block;
+  margin-top: 4px;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+/* Loading dots animation */
+.message-loading {
+  display: flex;
+  gap: 6px;
+  padding: 8px 0;
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  background: #4caf9d;
+  border-radius: 50%;
+  animation: blink 1.4s infinite both;
+}
+
+.dot:nth-child(2) { animation-delay: 0.2s; }
+.dot:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes blink {
+  0%   { opacity: 0.2; }
+  20%  { opacity: 1; }
+  100% { opacity: 0.2; }
+}
+
+/* ================================
+   GALLERY COLLAGE (RIGHT)
+================================ */
+
+.gallery {
+  width: 420px;
+}
+
+/* Collage layout */
+.collage {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+}
+
+/* Photo frame style */
+.photo-frame {
+  background: white;
+  padding: 8px;
+  border-radius: 12px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+  transform-origin: center;
+}
+
+/* Image inside frame */
+.photo-frame img {
+  width: 160px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* ================================
+   TITLE IMPROVEMENT
+================================ */
+
+h1 {
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #1f2937;
+}
+/* ================================
+   LIVE ANIMATED BACKGROUND
+================================ */
+
+.live-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.bg-shape {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(76, 175, 157, 0.5),
+    rgba(59, 130, 246, 0.3)
+  );
+  filter: blur(1px);
+}
