@@ -8,7 +8,6 @@ import birthdayRoutes from "./routes/birthday.js";
 
 const app = express();
 
-// DB connection (safe for serverless)
 connectDB();
 
 app.use(cors());
@@ -20,8 +19,6 @@ app.get("/", (req, res) => {
 
 app.use("/api/birthday", birthdayRoutes);
 
-// ❌ DO NOT listen on Vercel
-// app.listen(...)
-
-// ✅ EXPORT for Vercel
+// ❌ DO NOT app.listen()
+// ✅ EXPORT app for Vercel
 export default app;

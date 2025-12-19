@@ -9,8 +9,8 @@ import MusicPlayer from "../components/MusicPlayer"; // 🎵 ADD
 import "../styles/birthday.css";
 
 // ✅ Works for local & production
-const API_BASE =
-  process.env.REACT_APP_API_BASE || "http://localhost:5000";
+const API_BASE = process.env.REACT_APP_API_BASE || "";
+
 
 const BirthdayPage = () => {
   const { slug } = useParams();
